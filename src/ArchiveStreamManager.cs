@@ -15,6 +15,9 @@ namespace PathResolvableArchive
 			var metadata = ArchiveMetaData.Build(files);
 			var metadataJson = JToken.FromObject(metadata).ToString(Formatting.None);
 
+			var originalPos = stream.Position;
+			stream.Position = 0;
+
 			var writer = new BinaryWriter(stream);
 
 			// write magic-number (3 bytes)
@@ -31,10 +34,15 @@ namespace PathResolvableArchive
 			{
 				writer.Write(file.Buffer.ToArray());
 			}
+
+			stream.Position = originalPos;
 		}
 
 		public ArchiveMetaData ReadHeader(Stream stream)
 		{
+			var originalPos = stream.Position;
+			stream.Position = 0;
+
 			var reader = new BinaryReader(stream);
 
 			// read magic-number (3 bytes)
@@ -50,6 +58,8 @@ namespace PathResolvableArchive
 			var metadataBuffer = reader.ReadBytes(metadataLnegth);
 			var metadataJson = Encoding.UTF8.GetString(metadataBuffer);
 			var metadata = JToken.Parse(metadataJson).ToObject<ArchiveMetaData>();
+
+			stream.Position = originalPos;
 
 			return metadata;
 		}

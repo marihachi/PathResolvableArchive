@@ -16,9 +16,9 @@ namespace PathResolvableArchive
 			[JsonProperty("path")]
 			public string Path;
 			[JsonProperty("offset")]
-			public int Offset;
+			public string Offset;
 			[JsonProperty("length")]
-			public int Length;
+			public string Length;
 		}
 
 		public static ArchiveMetaData Build(IReadOnlyCollection<PathResolvableData> files)
@@ -28,7 +28,7 @@ namespace PathResolvableArchive
 			foreach (var file in files)
 			{
 				var length = file.Buffer.Count();
-				fileDataInfos.Add(new FileDataInfo() { Path = file.Path, Offset = offset, Length = length });
+				fileDataInfos.Add(new FileDataInfo() { Path = file.Path, Offset = offset.ToString(), Length = length.ToString() });
 				offset += length;
 			}
 
