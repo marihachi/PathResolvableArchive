@@ -14,7 +14,7 @@ Offset | Size      | Name                | Description
  7     | MDL       | MetaData            | The MetaData is JSON format string.<br />The MetaData have file infos that includes filepath info etc. .
  7+MDL | until EOF | FileDataBlocks      | Buffer of the FileData arranged continuously.
 
-Table 1 Structure of PRA file header
+**Table 1 Structure of PRA file header**
 </center>
 
 ## License
