@@ -17,5 +17,18 @@ Offset | Size      | Name                | Description
 **Table 1 Structure of PRA file header**
 </center>
 
+The format of the MetaData is below:
+
+```json
+{
+	"version": 1,
+	"files": [
+		{ "path": "maps/map1.json", "offset": "0", "length": "80" },
+		{ "path": "chars/char1.png", "offset": "80", "length": "160" },
+		{ "path": "chars/char2.png", "offset": "240", "length": "140" }
+	]
+}
+```
+
 ## License
 MIT
