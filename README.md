@@ -3,7 +3,7 @@ A parser and serializer for PathResolvableArchive(PRA) format
 
 ## Specification
 
-The format of PRA file header is described in Table 1
+The format of PRA file is described in Table 1
 
 <center>
 
