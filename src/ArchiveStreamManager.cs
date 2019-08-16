@@ -8,7 +8,7 @@ using System.Text;
 
 namespace PathResolvableArchive
 {
-	public class ArchiveStreamManager
+	public static class ArchiveStreamManager
 	{
 		public static void WriteArchive(Stream stream, IReadOnlyCollection<PathResolvableData> files)
 		{
@@ -38,7 +38,7 @@ namespace PathResolvableArchive
 			stream.Position = originalPos;
 		}
 
-		public ArchiveMetaData ReadHeader(Stream stream)
+		public static ArchiveMetaData ReadHeader(Stream stream)
 		{
 			var originalPos = stream.Position;
 			stream.Position = 0;
