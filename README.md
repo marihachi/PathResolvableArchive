@@ -17,7 +17,7 @@ Offset | Size      | Name                | Description
 **Table 1 Structure of PRA file**
 </center>
 
-The format of the MetaData is below:
+The format of the MetaData as follows:
 
 ```json
 {
