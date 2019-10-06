@@ -44,9 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArchiveItemInfo.cs" />
+    <Compile Include="ArchiveManager.cs" />
+    <Compile Include="ArchiveItem.cs" />
     <Compile Include="ArchiveMetaData.cs" />
-    <Compile Include="ArchiveStreamManager.cs" />
-    <Compile Include="BufferWithPathInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

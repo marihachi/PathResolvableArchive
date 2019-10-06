@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace PathResolvableArchive
 {
-	public class BufferWithPathInfo
+	public class ArchiveItem
 	{
 		public string Path;
 		public IEnumerable<byte> Buffer;
