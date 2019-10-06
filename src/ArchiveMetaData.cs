@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -37,6 +38,16 @@ namespace PathResolvableArchive
 				Version = 1,
 				Files = fileDataInfos
 			};
+		}
+
+		public string ToJson()
+		{
+			return JToken.FromObject(this).ToString(Formatting.None);
+		}
+
+		public static ArchiveMetaData FromJson(string json)
+		{
+			return JToken.Parse(json).ToObject<ArchiveMetaData>();
 		}
 	}
 }

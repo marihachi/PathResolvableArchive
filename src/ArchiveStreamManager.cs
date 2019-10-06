@@ -13,9 +13,8 @@ namespace PathResolvableArchive
 		public static void WriteArchive(Stream stream, IReadOnlyCollection<BufferWithPathInfo> files)
 		{
 			var metadata = ArchiveMetaData.Build(files);
-			var metadataJson = JToken.FromObject(metadata).ToString(Formatting.None);
+			var metadataJson = metadata.ToJson();
 
-			var originalPos = stream.Position;
 			stream.Position = 0;
 
 			var writer = new BinaryWriter(stream);
@@ -34,13 +33,10 @@ namespace PathResolvableArchive
 			{
 				writer.Write(file.Buffer.ToArray());
 			}
-
-			stream.Position = originalPos;
 		}
 
 		public static ArchiveMetaData ReadHeader(Stream stream)
 		{
-			var originalPos = stream.Position;
 			stream.Position = 0;
 
 			var reader = new BinaryReader(stream);
@@ -57,9 +53,7 @@ namespace PathResolvableArchive
 			// read the json metadata
 			var metadataBuffer = reader.ReadBytes(metadataLnegth);
 			var metadataJson = Encoding.UTF8.GetString(metadataBuffer);
-			var metadata = JToken.Parse(metadataJson).ToObject<ArchiveMetaData>();
-
-			stream.Position = originalPos;
+			var metadata = ArchiveMetaData.FromJson(metadataJson);
 
 			return metadata;
 		}
