@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="ArchiveMetaData.cs" />
     <Compile Include="ArchiveStreamManager.cs" />
-    <Compile Include="PathResolvableData.cs" />
+    <Compile Include="BufferWithPathInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
