@@ -10,7 +10,7 @@ namespace PathResolvableArchive
 {
 	public static class ArchiveStreamManager
 	{
-		public static void WriteArchive(Stream stream, IReadOnlyCollection<PathResolvableData> files)
+		public static void WriteArchive(Stream stream, IReadOnlyCollection<BufferWithPathInfo> files)
 		{
 			var metadata = ArchiveMetaData.Build(files);
 			var metadataJson = JToken.FromObject(metadata).ToString(Formatting.None);

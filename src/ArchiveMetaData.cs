@@ -21,7 +21,7 @@ namespace PathResolvableArchive
 			public string Length;
 		}
 
-		public static ArchiveMetaData Build(IReadOnlyCollection<PathResolvableData> files)
+		public static ArchiveMetaData Build(IReadOnlyCollection<BufferWithPathInfo> files)
 		{
 			var fileDataInfos = new List<FileDataInfo>();
 			var offset = 0;
