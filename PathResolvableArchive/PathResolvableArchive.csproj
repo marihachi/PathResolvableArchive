@@ -48,6 +48,7 @@
     <Compile Include="ArchiveManager.cs" />
     <Compile Include="ArchiveItem.cs" />
     <Compile Include="ArchiveMetaData.cs" />
+    <Compile Include="FsUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

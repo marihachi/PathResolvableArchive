@@ -10,6 +10,11 @@ namespace PathResolvableArchive
 	{
 		public static void Write(Stream stream, IReadOnlyCollection<ArchiveItem> items)
 		{
+			if (!stream.CanWrite)
+			{
+				throw new IOException("this stream does not support write access");
+			}
+
 			var metadataRaw = ArchiveMetaDataRaw.Build(items);
 			var metadataJson = metadataRaw.ToJson();
 
@@ -36,6 +41,11 @@ namespace PathResolvableArchive
 
 		public static ArchiveMetaData ReadMetaData(Stream stream)
 		{
+			if (!stream.CanRead)
+			{
+				throw new IOException("this stream does not support read access");
+			}
+
 			stream.Position = 0;
 
 			using (var reader = new BinaryReader(stream, Encoding.UTF8, true))
@@ -67,6 +77,11 @@ namespace PathResolvableArchive
 
 		public static ArchiveItem ReadItem(Stream stream, ArchiveMetaData metadata, ArchiveItemInfo itemInfo)
 		{
+			if (!stream.CanRead)
+			{
+				throw new IOException("this stream does not support read access");
+			}
+
 			using (var reader = new BinaryReader(stream, Encoding.UTF8, true))
 			{
 				if (metadata.Raw.Version == 1)
@@ -86,6 +101,11 @@ namespace PathResolvableArchive
 
 		public static List<ArchiveItem> ReadItems(Stream stream, ArchiveMetaData metadata)
 		{
+			if (!stream.CanRead)
+			{
+				throw new IOException("this stream does not support read access");
+			}
+
 			var result = new List<ArchiveItem>();
 
 			using (var reader = new BinaryReader(stream, Encoding.UTF8, true))
