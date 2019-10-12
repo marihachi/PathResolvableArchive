@@ -4,7 +4,6 @@ namespace PathResolvableArchive
 {
 	public class ArchiveItemInfo
 	{
-		public ArchiveItemInfo() { }
 		public ArchiveItemInfo(string path, string offset, string length)
 		{
 			this.Path = path;
@@ -13,10 +12,10 @@ namespace PathResolvableArchive
 		}
 
 		[JsonProperty("path")]
-		public string Path { get; }
+		public string Path { get; set; }
 		[JsonProperty("offset")]
-		public string Offset { get; }
+		public string Offset { get; set; }
 		[JsonProperty("length")]
-		public string Length { get; }
+		public string Length { get; set; }
 	}
 }

@@ -90,7 +90,7 @@ namespace PathResolvableArchive
 					stream.Position = metadata.PayloadBeginOffset + int.Parse(itemInfo.Offset);
 					var buffer = reader.ReadBytes(int.Parse(itemInfo.Length));
 
-					return new ArchiveItem { Buffer = buffer, Path = itemInfo.Path };
+					return new ArchiveItem(itemInfo.Path, buffer);
 				}
 				else
 				{
@@ -118,7 +118,7 @@ namespace PathResolvableArchive
 						stream.Position = metadata.PayloadBeginOffset + int.Parse(file.Offset);
 						var buffer = reader.ReadBytes(int.Parse(file.Length));
 
-						result.Add(new ArchiveItem { Buffer = buffer, Path = file.Path });
+						result.Add(new ArchiveItem(file.Path, buffer));
 					}
 				}
 				else

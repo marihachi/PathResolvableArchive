@@ -4,7 +4,13 @@ namespace PathResolvableArchive
 {
 	public class ArchiveItem
 	{
-		public string Path;
-		public IEnumerable<byte> Buffer;
+		public ArchiveItem(string path, IReadOnlyList<byte> buffer)
+		{
+			this.Path = path;
+			this.Buffer = buffer;
+		}
+
+		public string Path { get; set; }
+		public IReadOnlyList<byte> Buffer { get; set; }
 	}
 }

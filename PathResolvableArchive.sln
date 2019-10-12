@@ -4,6 +4,8 @@ VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathResolvableArchive", "PathResolvableArchive\PathResolvableArchive.csproj", "{F3D15598-7556-4815-8BAD-E19D0B982C37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathResolvableArchive.BasicExample", "PathResolvableArchive.BasicExample\PathResolvableArchive.BasicExample.csproj", "{3B7A53D0-9151-4E90-B6B1-7B1C55585A64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,10 @@ Global
 		{F3D15598-7556-4815-8BAD-E19D0B982C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3D15598-7556-4815-8BAD-E19D0B982C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3D15598-7556-4815-8BAD-E19D0B982C37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B7A53D0-9151-4E90-B6B1-7B1C55585A64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B7A53D0-9151-4E90-B6B1-7B1C55585A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B7A53D0-9151-4E90-B6B1-7B1C55585A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B7A53D0-9151-4E90-B6B1-7B1C55585A64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

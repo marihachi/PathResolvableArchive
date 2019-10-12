@@ -19,7 +19,6 @@ namespace PathResolvableArchive
 
 	public class ArchiveMetaDataRaw
 	{
-		public ArchiveMetaDataRaw() { }
 		public ArchiveMetaDataRaw(int version, IReadOnlyList<ArchiveItemInfo> itemInfos)
 		{
 			this.Version = version;
@@ -27,9 +26,9 @@ namespace PathResolvableArchive
 		}
 
 		[JsonProperty("version")]
-		public int Version { get; }
+		public int Version { get; set; }
 		[JsonProperty("files")]
-		public IReadOnlyList<ArchiveItemInfo> ItemInfos { get; }
+		public IReadOnlyList<ArchiveItemInfo> ItemInfos { get; set; }
 
 		public static ArchiveMetaDataRaw Build(IReadOnlyCollection<ArchiveItem> items)
 		{
